@@ -1,6 +1,7 @@
 package com.digitalshop.OrderService.service;
 
 import com.digitalshop.OrderService.entity.OrderEntity;
+import com.digitalshop.OrderService.external.feignclient.ProductService;
 import com.digitalshop.OrderService.model.OrderRequest;
 import com.digitalshop.OrderService.repository.OrderRepo;
 import lombok.extern.log4j.Log4j2;
@@ -15,6 +16,9 @@ import java.time.Instant;
 public class OrderServiceImpl implements OrderService {
     @Autowired
     OrderRepo orderRepo;
+
+    @Autowired
+    ProductService productService;
     @Override
     public Long placeOrder(OrderRequest order) {
         log.info("Placing order..");
@@ -23,6 +27,7 @@ public class OrderServiceImpl implements OrderService {
         //Call ProductMS and update quantity
         //Initiate Payment by calling PaymentMS.
         //If payment->SUCCESS:return success else error.
+        productService.reduceQuantity(order.getProductId(),order.getQuantity());
 
         OrderEntity orderEntity = OrderEntity.builder()
                 .productId(order.getProductId())
