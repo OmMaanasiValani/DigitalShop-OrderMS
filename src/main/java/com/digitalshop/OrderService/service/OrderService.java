@@ -2,9 +2,11 @@ package com.digitalshop.OrderService.service;
 
 
 import com.digitalshop.OrderService.model.OrderRequest;
+import com.digitalshop.OrderService.model.OrderResponse;
 
 public interface OrderService {
     Long placeOrder(OrderRequest order);
 
-   // ProductResponse getProduct(long id);
+    OrderResponse getOrderDetails(long orderId);
+
 }

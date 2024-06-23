@@ -1,6 +1,6 @@
 package com.digitalshop.OrderService.model;
 
-public enum Paymentmode {
+public enum PaymentMode {
 
     CASH,
     PAYPAL,
