@@ -5,7 +5,6 @@ import com.digitalshop.OrderService.external.feignclient.ProductService;
 import com.digitalshop.OrderService.model.OrderRequest;
 import com.digitalshop.OrderService.repository.OrderRepo;
 import lombok.extern.log4j.Log4j2;
-import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 

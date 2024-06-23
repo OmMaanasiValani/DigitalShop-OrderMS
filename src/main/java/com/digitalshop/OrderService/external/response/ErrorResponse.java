@@ -1,4 +1,4 @@
-package com.digitalshop.OrderService.model;
+package com.digitalshop.OrderService.external.response;
 
 import lombok.AllArgsConstructor;
 import lombok.Builder;
