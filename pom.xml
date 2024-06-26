@@ -9,8 +9,9 @@
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
 	<groupId>com.digitalshop</groupId>
-	<artifactId>OrderService</artifactId>
+	<artifactId>orderservice</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
+	<packaging>jar</packaging>
 	<name>OrderService</name>
 	<description>Order Service MS</description>
 	<url/>
@@ -113,6 +114,16 @@
 							<artifactId>lombok</artifactId>
 						</exclude>
 					</excludes>
+				</configuration>
+			</plugin>
+			<plugin>
+				<groupId>com.google.cloud.tools</groupId>
+				<artifactId>jib-maven-plugin</artifactId>
+				<version>3.4.1</version>
+				<configuration>
+					<to>
+						<image>mansiv5/${project.artifactId}:T1</image>
+					</to>
 				</configuration>
 			</plugin>
 		</plugins>
